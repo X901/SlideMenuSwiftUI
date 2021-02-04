@@ -16,7 +16,7 @@ SlideMenuSwiftUI is side menu written in SwiftUI .
 Move `Source` folder to you project
 
 ## Usage
-Modify files inside `Implementation folder`
+Modify files inside `Implementation` folder
 1. Add name and icon for slidemenu items by modify `MenuItems.swift`.
 2. Change menu color by modify `MenuItemStyle.swift`
 2. Add PageView for each item by modify `PageView.swift`.
