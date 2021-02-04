@@ -12,7 +12,6 @@ import SwiftUI
 struct BaseView: View {
     @State private var menuViewSheetShown = false
     @State private var pageViewIndex = 0
-    @State private var bottomSheetShown = false
     
     private let menuItems = MenuItems()
     
