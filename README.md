@@ -3,6 +3,9 @@
 ## Overview
 SlideMenuSwiftUI is side menu written in SwiftUI .
 
+## Demo
+![Alt Text](https://github.com/X901/SlideMenuSwiftUI/blob/main/LTR.gif ) ![Alt Text](https://github.com/X901/SlideMenuSwiftUI/blob/main/RTL.gif)
+
 ### its support :
 - Dark mode 
 - RTL and LTR Language by default
@@ -21,4 +24,5 @@ Modify files inside Implementation folder
 The slideMenu depend on `pageViewIndex` index , index 0 mean user tap on 1st item in slideMenu 
 
 Note : form now on depend on BaseView as you Root View for your application as you can see in Demo Project
+
 
