@@ -44,7 +44,7 @@ struct SlideMenuSheetView<Content: View,PageContent:View>: View {
             ZStack {
                 self.pageContent.disabled(isOpen ? true : false)
                 
-                Color(.black).opacity( isOpen ? 0.5 : 0).ignoresSafeArea()
+                Color(.black).opacity( isOpen ? 0.5 : 0).ignoresSafeArea().animation(.easeOut)
                     .onTapGesture {
                         isOpen.toggle()
                     }
@@ -60,18 +60,21 @@ struct SlideMenuSheetView<Content: View,PageContent:View>: View {
             .clipped()
             .background(Color(.secondarySystemGroupedBackground))
             .offset(x: -self.offset )
-            .animation(.interactiveSpring())
             .gesture(
                 DragGesture().updating(self.$translation) { value, state, _ in
                     state = layoutDirection == .leftToRight ? value.translation.height : -value.translation.height
                 }.onEnded { value in
+                    withAnimation {
+
                     let snapDistance = self.maxWidth * Constants.snapRatio
                     guard abs(value.translation.height) < snapDistance else {
                         return
                     }
                     self.isOpen = layoutDirection == .leftToRight ? value.translation.width > 0 : value.translation.width < 0
                 }
+                }
             )
+            .animation(.easeOut(duration: 0.4))
         }
     }
 }
